@@ -23,7 +23,7 @@ const changeL = (o, l, c, t, co, cb) => {
                 cb()
             } else {
                 l.forEach((p) => {
-                    s[p] = '<span style="color:' + co + '">' + (Math.random() > 0.5 ? 1 : 0) + '</span>'
+                    s[p] = `<span style="color:${co}">${Math.round(Math.random())}</span>`
                 })
                 o.innerHTML = s.join('')
             }
@@ -32,14 +32,14 @@ const changeL = (o, l, c, t, co, cb) => {
 }
 
 const startBuildAnim = function(conf = {}){
-    let { min = 1, max = 3, changes = 20, time = 70, color = 'green' } = conf // destruct options + default values
+    const { min = 1, max = 3, changes = 20, time = 70, color = 'green' } = conf // destruct options + default values
     const length = this.innerHTML.length
     const l = []
     const i = max > min ? Math.round(Math.random() * (max - min)) + min : min
 
     for (let n = 0; n < i; n++) l.push(Math.round(Math.random() * (length - 1)))
 
-    changeL(this, l, changes, time, color, () => this.startBuildAnim( conf))
+    changeL(this, l, changes, time, color, () => window.requestAnimationFrame(()=>this.startBuildAnim( conf)))
 }
 
 HTMLElement.prototype.startBuildAnim = startBuildAnim
