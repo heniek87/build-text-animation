@@ -1,0 +1,19 @@
+{
+  "name": "build-text-animation",
+  "version": "1.0.0",
+  "description": "This is wery simple text animation for your website.",
+  "main": "build-text-animation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heniek87/build-text-animation.git"
+  },
+  "author": "Michał Morawiec",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heniek87/build-text-animation/issues"
+  },
+  "homepage": "https://github.com/heniek87/build-text-animation#readme"
+}

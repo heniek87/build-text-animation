@@ -12,17 +12,16 @@
                 align-items: center;
                 justify-content: center;
             }
-            .content h1{
+            h1{
                 font-family: monospace;
-                font-size: 3em;
+                font-size: clamp(1em,5vw,2rem);
             }
         </style>
     </head>
     <body>
-        <div class="content">
-            <h1>The website is under construction</h1>
-        </div>
-        <script src="./build-text-animation.js"></script>
+       <script src="./build-text-animation.js"></script>
+        <h1 >The website is under construction</h1>
+        
         <script>
             const options = {
                 min: 1, // minimum change chars              / default = 1
@@ -31,8 +30,8 @@
                 time: 70, //waiting for change               / default = 70
                 color: 'green', //color changed char         / default = 'green'
             } // all options is optional
-
-            startBuildAnim(document.querySelector('h1'), options) // options is optional
+            document.querySelector('h1').startBuildAnim(options)// options is optional
+            
         </script>
     </body>
 
